@@ -126,6 +126,8 @@ def compute_metrics_on_folder(folder_ref: str, folder_pred: str, output_file: st
                               ignore_label: int = None,
                               num_processes: int = default_num_processes,
                               chill: bool = True) -> dict:
+    
+    print(regions_or_labels)
     """
     output_file must end with .json; can be None
     """

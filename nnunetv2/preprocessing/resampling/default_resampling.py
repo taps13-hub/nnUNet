@@ -200,6 +200,19 @@ def resample_data_or_seg(data: np.ndarray, new_shape: Union[Tuple[float, ...], L
         return data
 
 
+def no_resampling(data: Union[torch.Tensor, np.ndarray], 
+                    new_shape: Union[Tuple[int, ...], List[int], np.ndarray],
+                    current_spacing: Union[Tuple[float, ...], List[float], np.ndarray],
+                    new_spacing: Union[Tuple[float, ...], List[float], np.ndarray],
+                    is_seg: bool = False,
+                    order: int = 3, order_z: int = 0,
+                    force_separate_z: Union[bool, None] = False,
+                    separate_z_anisotropy_threshold: float = ANISO_THRESHOLD):
+    # added by JT on 4/4/25, function that applies no resampling, with arguments mimickikng that of 
+    # the default resample_data_or_seg_to_shape
+    return data 
+
+
 if __name__ == '__main__':
     input_array = np.random.random((1, 42, 231, 142))
     output_shape = (52, 256, 256)
